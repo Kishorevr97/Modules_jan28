@@ -28,8 +28,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-      with:
-          token: ${{ secrets.TOKEN }}
+      # with:
+      #     token: ${{ secrets.TOKEN }}
           
     - name: Configure Git
       run: |
