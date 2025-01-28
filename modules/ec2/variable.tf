@@ -13,8 +13,3 @@ validation {
       }
 
 }
-
-variable "instance_name" {
-  description = "Instance name tag"
-  type        = string
-}
