@@ -20,7 +20,7 @@ module "rds_instance" {
 }
 
 module "s3_bucket" {
-  source           = "./modules/s3"
+  source           = "./modules/S3"
   s3_bucket_name   = var.s3_bucket_name
   bucket_name_tag  = "jan27-bucket"
 }
