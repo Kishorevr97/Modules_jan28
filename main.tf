@@ -3,6 +3,6 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source        = "modules_jan28/modules/ec2/main.tf"
+  source        = "./modules/ec2"
   instance_name = "teraa_jan27"
 }
