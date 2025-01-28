@@ -49,7 +49,9 @@ jobs:
         aws-region: eu-north-1
 
     - name: Initialize Terraform
-      run: terraform init
+      run: |
+        cd environments/dev
+        terraform init
 
     - name: Select Workspace
       run: terraform workspace select ${{ github.event.inputs.environment || 'dev' }} || terraform workspace new ${{ github.event.inputs.environment || 'dev' }}
