@@ -6,7 +6,6 @@ module "ec2_instance" {
   source        = "../../modules/ec2"
   ami           = var.ami
   instance_type = var.instance_type
-  instance_name = var.instance_name
 }
 
 module "rds_instance" {
@@ -22,5 +21,4 @@ module "rds_instance" {
 module "s3_bucket" {
   source           = "../../modules/S3"
   s3_bucket_name   = var.s3_bucket_name
-  bucket_name_tag  = "jan27-bucket"
 }
