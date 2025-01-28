@@ -54,7 +54,7 @@ jobs:
         terraform init
 
     - name: Select Workspace
-      run: terraform workspace select ${{ github.event.inputs.environment || 'dev' }} || terraform workspace new ${{ github.event.inputs.environment || 'dev' }}
+      run: terraform workspace select ${{ github.event.inputs.environment }} || terraform workspace new ${{ github.event.inputs.environment }}
 
     - name: Generate Terraform Plan
       run: |
@@ -80,4 +80,6 @@ jobs:
 
     - name: Terraform Apply 
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: terraform apply '-var-file=${{ github.event.inputs.environment }}.tfvars' -auto-approve
+      run: |
+        cd environments/${{ github.event.inputs.environment }}
+        terraform apply '-var-file=${{ github.event.inputs.environment }}.tfvars' -auto-approve
