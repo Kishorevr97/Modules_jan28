@@ -3,6 +3,6 @@ resource "aws_instance" "terra" {
   instance_type = var.instance_type
 
   tags = {
-    Name = var.instance_name
+    Name = teraa_jan27
   }
 }
