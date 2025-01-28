@@ -3,14 +3,14 @@ provider "aws" {
 }
 
 module "ec2_instance" {
-  source        = "./modules/ec2"
+  source        = "../../modules/ec2"
   ami           = var.ami
   instance_type = var.instance_type
   instance_name = "teraa_jan27"
 }
 
 module "rds_instance" {
-  source              = "./modules/rds"
+  source              = "../../modules/rds"
   db_engine           = var.db_engine
   db_instance_class   = var.db_instance_class
   db_allocated_storage = var.db_allocated_storage
@@ -20,7 +20,7 @@ module "rds_instance" {
 }
 
 module "s3_bucket" {
-  source           = "./modules/S3"
+  source           = "../../modules/S3"
   s3_bucket_name   = var.s3_bucket_name
   bucket_name_tag  = "jan27-bucket"
 }
