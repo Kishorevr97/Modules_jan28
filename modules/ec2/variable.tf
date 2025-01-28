@@ -1,14 +1,15 @@
 variable "ami" {
-  description = "AMI ID"
-  type        = string
+        description = "ami of the server"
+
 }
 
 variable "instance_type" {
-  description = "Instance type"
-  type        = string
-}
+        description = "instance type of the server"
 
-variable "instance_name" {
-  description = "Instance name tag"
-  type        = string
+validation {
+       condition = contains(["t2.micro", "t3.micro"], var.instance_type)
+       error_message = "instance type must be either 't2.micro' or 't3.micro'."
+
+      }
+
 }
