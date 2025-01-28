@@ -50,7 +50,7 @@ jobs:
 
     - name: Initialize Terraform
       run: |
-        cd environments/dev
+        cd environments/${{ github.event.inputs.environment }}
         terraform init
 
     - name: Select Workspace
