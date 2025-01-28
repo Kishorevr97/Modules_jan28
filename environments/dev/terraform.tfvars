@@ -1,0 +1,10 @@
+aws_region = "eu-north-1"
+ami = "ami-09a9858973b288bdd"
+instance_type = "t3.micro"
+db_engine = "mysql"
+db_instance_class = "db.t4g.micro"
+db_allocated_storage = 20
+db_name = "terrajan27"
+db_username = "kish"
+db_password = "kishu1234"
+s3_bucket_name = "my-kishore-content"
